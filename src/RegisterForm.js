@@ -3,7 +3,13 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 
 const RegisterForm = () => {
-  const { register, formState: { errors }, getValues, handleSubmit } = useForm();
+  const { register, formState: { errors }, getValues, handleSubmit } = useForm({
+    defaultValues: {
+      email: "kbinu42@gmail.com",
+      password: "bB12@3232",
+      confirm_password: "bB12@3232"
+    }
+  });
   const onSubmit = (data) => console.log(data);
 
   console.log(errors)
