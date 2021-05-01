@@ -53,10 +53,14 @@ const Result = () => {
       formData.append(entry[0], entry[1]);
     });
 
-    const res = await fetch('http://localhost:4000/', {
+    console.log(formData);
+
+    const res = await fetch('http://localhost:4000', {
       method: 'POST',
       body: formData,
     });
+
+    console.log(res);
 
     if (res.status === 200) {
       Swal.fire('Great job!', "You've passed the challenge!", 'success');
